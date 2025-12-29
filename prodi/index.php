@@ -46,13 +46,6 @@ $page = $_GET['page'] ?? 'list';
                     </a>
                 </li>
 
-                <li class="nav-item">
-                    <a class="nav-link"
-                       href="../mahasiswa/index.php?page=create">
-                        Tambah Mahasiswa
-                    </a>
-                </li>
-
                 <!-- MENU PRODI -->
                 <li class="nav-item">
                     <a class="nav-link <?= in_array($page, ['list','create','edit']) ? 'active' : '' ?>"

@@ -46,13 +46,6 @@ $page = $_GET['page'] ?? 'home';
                     </a>
                 </li>
 
-                <li class="nav-item">
-                    <a class="nav-link <?= $page=='create' ? 'active' : '' ?>"
-                       href="index.php?page=create">
-                        Tambah Mahasiswa
-                    </a>
-                </li>
-
                 <!-- MENU PRODI -->
                 <li class="nav-item">
                     <a class="nav-link"
