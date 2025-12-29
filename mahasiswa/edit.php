@@ -7,7 +7,7 @@ $result = $koneksi->query($query);
 $data = mysqli_fetch_assoc($result);
 
 if (!$data) {
-    header("Location: index.php?page=bukutamu");
+    header("Location: index.php?page=mahasiswa");
     exit;
 }
 ?>
@@ -34,6 +34,6 @@ if (!$data) {
         </div>
 
         <button type="submit" class="btn btn-success" name="update">Ubah Data</button>
-        <a href="index.php?page=bukutamu" class="btn btn-secondary">Batal</a>
+        <a href="index.php?page=mahasiswa" class="btn btn-secondary">Batal</a>
     </div>
 </form>
