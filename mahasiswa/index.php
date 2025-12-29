@@ -22,7 +22,7 @@ $page = $_GET['page'] ?? 'home';
 <nav class="navbar navbar-expand-lg bg-warning">
     <div class="container">
         <a class="navbar-brand" href="index.php">
-            DATA AKADEMIK
+            AKADEMIK
         </a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
