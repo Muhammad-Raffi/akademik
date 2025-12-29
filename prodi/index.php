@@ -22,7 +22,7 @@ $page = $_GET['page'] ?? 'list';
 <nav class="navbar navbar-expand-lg bg-warning">
     <div class="container">
         <a class="navbar-brand" href="../mahasiswa/index.php">
-            DATA AKADEMIK
+            AKADEMIK
         </a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -42,7 +42,7 @@ $page = $_GET['page'] ?? 'list';
                 <li class="nav-item">
                     <a class="nav-link"
                        href="../mahasiswa/index.php?page=mahasiswa">
-                        Data Mahasiswa
+                        Mahasiswa
                     </a>
                 </li>
 

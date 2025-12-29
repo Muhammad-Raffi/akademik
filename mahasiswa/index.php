@@ -12,7 +12,7 @@ $page = $_GET['page'] ?? 'home';
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Akademik</title>
+    <title>Akademik</title>
 
     <!-- Bootstrap sama dengan Prodi -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -42,7 +42,7 @@ $page = $_GET['page'] ?? 'home';
                 <li class="nav-item">
                     <a class="nav-link <?= $page=='mahasiswa' ? 'active' : '' ?>"
                        href="index.php?page=mahasiswa">
-                        Data Mahasiswa
+                        Mahasiswa
                     </a>
                 </li>
 
