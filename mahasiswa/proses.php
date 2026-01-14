@@ -1,9 +1,7 @@
 <?php
 require 'koneksi.php';
 
-/* =======================
-   INSERT PRODI
-======================= */
+/* INSERT PRODI */
 if (isset($_POST['simpan_prodi'])) {
     $nama_prodi = $_POST['nama_prodi'];
     $jenjang    = $_POST['jenjang'];
@@ -19,9 +17,7 @@ if (isset($_POST['simpan_prodi'])) {
 }
 
 
-/* =======================
-   UPDATE PRODI
-======================= */
+/* UPDATE PRODI */
 if (isset($_POST['update_prodi'])) {
     $id         = $_POST['id'];
     $nama_prodi = $_POST['nama_prodi'];
@@ -41,9 +37,7 @@ if (isset($_POST['update_prodi'])) {
 }
 
 
-/* =======================
-   DELETE PRODI
-======================= */
+/* DELETE PRODI */
 if (isset($_GET['hapus_prodi'])) {
     $id = $_GET['hapus_prodi'];
 
@@ -54,9 +48,7 @@ if (isset($_GET['hapus_prodi'])) {
 }
 
 
-/* =======================
-   INSERT MAHASISWA
-======================= */
+/* INSERT MAHASISWA */
 if (isset($_POST['submit'])) {
     $nim    = $_POST['nim'];
     $nama   = $_POST['nama_mhs'];
@@ -73,9 +65,7 @@ if (isset($_POST['submit'])) {
 }
 
 
-/* =======================
-   UPDATE MAHASISWA
-======================= */
+/* UPDATE MAHASISWA */
 if (isset($_POST['update'])) {
     $nim    = $_POST['nim'];
     $nama   = $_POST['nama_mhs'];
@@ -95,9 +85,7 @@ if (isset($_POST['update'])) {
 }
 
 
-/* =======================
-   DELETE MAHASISWA
-======================= */
+/* DELETE MAHASISWA */
 if (isset($_GET['id'])) {
     $nim = $_GET['id'];
 

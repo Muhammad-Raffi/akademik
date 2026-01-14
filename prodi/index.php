@@ -1,5 +1,7 @@
 <?php
 session_start();
+
+/* Proteksi halaman */
 if (!isset($_SESSION['login'])) {
     header("Location: ../mahasiswa/login.php");
     exit;
@@ -12,17 +14,25 @@ $page = $_GET['page'] ?? 'list';
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Prodi</title>
+    <title>Akademik</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        .container-fix {
+            margin-left: 18.75rem;
+        }
+    </style>
 </head>
 <body>
 
 <nav class="navbar navbar-expand-lg bg-warning">
-    <div class="container">
+    <div class="container container-fix">
 
-        <a class="navbar-brand" href="../mahasiswa/index.php">
-            AKADEMIK
+        <!-- BRAND -->
+        <a class="navbar-brand"
+           href="../mahasiswa/index.php?page=akademik">
+            Akademik
         </a>
 
         <button class="navbar-toggler" type="button"
@@ -32,6 +42,7 @@ $page = $_GET['page'] ?? 'list';
         </button>
 
         <div class="collapse navbar-collapse" id="navbarNav">
+
             <!-- MENU KIRI -->
             <ul class="navbar-nav me-auto">
 
@@ -50,7 +61,7 @@ $page = $_GET['page'] ?? 'list';
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link <?= in_array($page, ['list','create','edit']) ? 'active' : '' ?>"
+                    <a class="nav-link <?= in_array($page, ['list','create','edit']) ? 'active fw-bold' : '' ?>"
                        href="index.php?page=list">
                         Prodi
                     </a>
@@ -58,14 +69,26 @@ $page = $_GET['page'] ?? 'list';
 
             </ul>
 
-            <!-- LOGOUT KANAN -->
+            <!-- MENU KANAN (USER) -->
             <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a href="../mahasiswa/logout.php"
-                       class="nav-link px-3 py-1 bg-white rounded-3"
-                       onclick="return confirm('Yakin ingin logout?')">
-                        Logout
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle bg-white px-3 py-1 rounded-3"
+                       href="#"
+                       role="button"
+                       data-bs-toggle="dropdown">
+                        <?= htmlspecialchars($_SESSION['user_nama'] ?? 'User') ?>
                     </a>
+
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><hr class="dropdown-divider"></li>
+                        <li>
+                            <a class="dropdown-item text-danger"
+                               href="../mahasiswa/logout.php"
+                               onclick="return confirm('Yakin ingin logout?')">
+                                Logout
+                            </a>
+                        </li>
+                    </ul>
                 </li>
             </ul>
 
@@ -73,13 +96,16 @@ $page = $_GET['page'] ?? 'list';
     </div>
 </nav>
 
-<div class="container my-4">
+<div class="container container-fix my-4">
 <?php
 if ($page == 'list')   include 'list.php';
 if ($page == 'create') include 'create.php';
 if ($page == 'edit')   include 'edit.php';
 ?>
 </div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
