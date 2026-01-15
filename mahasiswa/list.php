@@ -47,11 +47,12 @@ $data = $koneksi->query("SELECT * FROM mahasiswa");
                     </a>
 
                     <!-- DELETE MAHASISWA -->
-                    <a href="proses.php?id=<?= $row['nim'] ?>"
-                       class="btn btn-danger btn-sm"
-                       onclick="return confirm('Yakin hapus data?')">
+                    <a href="proses.php?hapus_mhs=<?= $row['nim'] ?>"
+                        class="btn btn-danger btn-sm"
+                        onclick="return confirm('Yakin hapus data?')">
                         Delete
                     </a>
+
 
                 </div>
             </td>
