@@ -80,6 +80,11 @@ $page = $_GET['page'] ?? 'list';
                     </a>
 
                     <ul class="dropdown-menu dropdown-menu-end">
+                        <li>
+                            <a class="dropdown-item" href="../mahasiswa/edit_profil.php">
+                                Edit Profil
+                            </a>
+                        </li>
                         <li><hr class="dropdown-divider"></li>
                         <li>
                             <a class="dropdown-item text-danger"
@@ -98,9 +103,19 @@ $page = $_GET['page'] ?? 'list';
 
 <div class="container container-fix my-4">
 <?php
-if ($page == 'list')   include 'list.php';
-if ($page == 'create') include 'create.php';
-if ($page == 'edit')   include 'edit.php';
+switch ($page) {
+    case 'create':
+        include 'create.php';
+        break;
+
+    case 'edit':
+        include 'edit.php';
+        break;
+
+    default:
+        include 'list.php';
+        break;
+}
 ?>
 </div>
 

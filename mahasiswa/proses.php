@@ -1,8 +1,11 @@
 <?php
 require 'koneksi.php';
 
+/* PRODI */
+
 /* INSERT PRODI */
 if (isset($_POST['simpan_prodi'])) {
+
     $nama_prodi = $_POST['nama_prodi'];
     $jenjang    = $_POST['jenjang'];
     $keterangan = $_POST['keterangan'];
@@ -16,9 +19,9 @@ if (isset($_POST['simpan_prodi'])) {
     exit;
 }
 
-
 /* UPDATE PRODI */
 if (isset($_POST['update_prodi'])) {
+
     $id         = $_POST['id'];
     $nama_prodi = $_POST['nama_prodi'];
     $jenjang    = $_POST['jenjang'];
@@ -36,9 +39,9 @@ if (isset($_POST['update_prodi'])) {
     exit;
 }
 
-
 /* DELETE PRODI */
 if (isset($_GET['hapus_prodi'])) {
+
     $id = $_GET['hapus_prodi'];
 
     $koneksi->query("DELETE FROM prodi WHERE id='$id'");
@@ -48,8 +51,11 @@ if (isset($_GET['hapus_prodi'])) {
 }
 
 
+/* MAHASISWA */
+
 /* INSERT MAHASISWA */
 if (isset($_POST['submit'])) {
+
     $nim    = $_POST['nim'];
     $nama   = $_POST['nama_mhs'];
     $tgl    = $_POST['tgl_lahir'];
@@ -64,9 +70,9 @@ if (isset($_POST['submit'])) {
     exit;
 }
 
-
 /* UPDATE MAHASISWA */
 if (isset($_POST['update'])) {
+
     $nim    = $_POST['nim'];
     $nama   = $_POST['nama_mhs'];
     $tgl    = $_POST['tgl_lahir'];
@@ -84,13 +90,13 @@ if (isset($_POST['update'])) {
     exit;
 }
 
-
 /* DELETE MAHASISWA */
-if (isset($_GET['id'])) {
-    $nim = $_GET['id'];
+if (isset($_GET['hapus_mhs'])) {
+
+    $nim = $_GET['hapus_mhs'];
 
     $koneksi->query("DELETE FROM mahasiswa WHERE nim='$nim'");
+
     header("Location: index.php?page=mahasiswa");
     exit;
 }
-?>

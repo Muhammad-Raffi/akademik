@@ -30,9 +30,10 @@
                       placeholder="Deskripsi singkat program studi"></textarea>
         </div>
 
-        <button type="submit" class="btn btn-primary">
+        <button type="submit" name="simpan_prodi" class="btn btn-primary">
             Simpan
         </button>
+
 
         <a href="index.php?page=prodi" class="btn btn-outline-secondary">
             Kembali

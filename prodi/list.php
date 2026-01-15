@@ -1,7 +1,18 @@
 <?php
 require '../mahasiswa/koneksi.php';
 
-$data = $koneksi->query("SELECT * FROM prodi");
+$data = $koneksi->query("
+    SELECT * FROM prodi
+    ORDER BY 
+        CASE jenjang
+            WHEN 'D4' THEN 1
+            WHEN 'D3' THEN 2
+            WHEN 'D2' THEN 3
+            ELSE 4
+        END,
+        nama_prodi ASC
+");
+
 ?>
 
 <div class="d-flex justify-content-between align-items-center mb-3">

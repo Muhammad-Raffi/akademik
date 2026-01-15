@@ -17,18 +17,25 @@ $page = $_GET['page'] ?? 'home';
     <title>Akademik</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        /* geser menu mahasiswa */
+        body.geser-mahasiswa .container {
+            margin-left: 18.75rem;
+        }
+    </style>
 </head>
-<body>
+
+<body class="<?= $page=='mahasiswa' ? 'geser-mahasiswa' : '' ?>">
 
 <nav class="navbar navbar-expand-lg bg-warning">
     <div class="container">
 
         <!-- BRAND -->
         <a class="navbar-brand <?= $page=='akademik' ? 'fw-bold' : '' ?>"
-            href="../mahasiswa/index.php?page=akademik">
-                Akademik
+           href="../mahasiswa/index.php?page=akademik">
+            Akademik
         </a>
-
 
         <button class="navbar-toggler" type="button"
                 data-bs-toggle="collapse"
@@ -40,7 +47,6 @@ $page = $_GET['page'] ?? 'home';
 
             <!-- MENU KIRI -->
             <ul class="navbar-nav me-auto">
-
                 <li class="nav-item">
                     <a class="nav-link <?= $page=='home' ? 'active fw-bold' : '' ?>"
                        href="index.php?page=home">
@@ -61,10 +67,9 @@ $page = $_GET['page'] ?? 'home';
                         Prodi
                     </a>
                 </li>
-
             </ul>
 
-            <!-- MENU KANAN (USER) -->
+            <!-- MENU KANAN -->
             <ul class="navbar-nav">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle bg-white px-3 py-1 rounded-3"
@@ -75,6 +80,11 @@ $page = $_GET['page'] ?? 'home';
                     </a>
 
                     <ul class="dropdown-menu dropdown-menu-end">
+                        <li>
+                            <a class="dropdown-item" href="../mahasiswa/edit_profil.php">
+                                Edit Profil
+                            </a>
+                        </li>
                         <li><hr class="dropdown-divider"></li>
                         <li>
                             <a class="dropdown-item text-danger"
@@ -101,8 +111,6 @@ if ($page == 'edit')      include 'edit.php';
 ?>
 </div>
 
-<!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-
 </body>
 </html>
